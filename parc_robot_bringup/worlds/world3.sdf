@@ -1,0 +1,2615 @@
+<?xml version="1.0"?>
+<!-- Seed: 4894 -->
+<sdf version="1.9">
+  <world name="world3">
+
+  <gui fullscreen="0">
+
+  <!-- 3D scene -->
+    <plugin filename="MinimalScene" name="3D View">
+      <gz-gui>
+        <title>3D View</title>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">1501</property>
+        <property key="height" type="double">963</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">docked</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">1501</property>
+        <property key="availableHeight" type="double">963</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">true</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">50</property>
+        <property key="cardMinimumWidth" type="int">200</property>
+        <property key="cardMinimumHeight" type="int">200</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+      </gz-gui>
+
+      <engine>ogre2</engine>
+      <scene>scene</scene>
+      <ambient_light>0.4 0.4 0.4</ambient_light>
+      <background_color>0.8 0.8 0.8</background_color>
+      <camera_pose>1.8687 -8.7436 6.2508 0.0000 0.6566 1.5739</camera_pose>
+    </plugin>
+
+    <plugin filename="EntityContextMenuPlugin" name="Entity context menu">
+      <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">5</property>
+        <property key="height" type="double">5</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">5</property>
+        <property key="availableHeight" type="double">5</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">true</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">370</property>
+        <property key="cardMinimumWidth" type="int">350</property>
+        <property key="cardMinimumHeight" type="int">370</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+      </gz-gui>
+    </plugin>
+    
+    <plugin filename="GzSceneManager" name="Scene Manager">
+      <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">5</property>
+        <property key="height" type="double">5</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">5</property>
+        <property key="availableHeight" type="double">5</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">130</property>
+        <property key="cardMinimumWidth" type="int">350</property>
+        <property key="cardMinimumHeight" type="int">130</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+      </gz-gui>
+    </plugin>
+
+    <plugin filename="InteractiveViewControl" name="Interactive view control">
+      <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">5</property>
+        <property key="height" type="double">5</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">5</property>
+        <property key="availableHeight" type="double">5</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">110</property>
+        <property key="cardMinimumWidth" type="int">350</property>
+        <property key="cardMinimumHeight" type="int">110</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+      </gz-gui>
+    </plugin>
+
+<plugin filename="CameraTracking" name="Camera Tracking">
+    <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">5</property>
+        <property key="height" type="double">5</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">5</property>
+        <property key="availableHeight" type="double">5</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">260</property>
+        <property key="cardMinimumWidth" type="int">350</property>
+        <property key="cardMinimumHeight" type="int">260</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+    </gz-gui>
+</plugin>
+
+<!-- No marker manager -->
+<!-- No spawn entities -->
+<!-- No visualization capabilities -->
+
+<plugin filename="SelectEntities" name="Select Entities">
+    <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">5</property>
+        <property key="height" type="double">5</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">5</property>
+        <property key="availableHeight" type="double">5</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">90</property>
+        <property key="cardMinimumWidth" type="int">350</property>
+        <property key="cardMinimumHeight" type="int">90</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+    </gz-gui>
+</plugin>
+
+<plugin filename="WorldControl" name="World control">
+    <gz-gui>
+        <title>World control</title>
+        <anchors target="3D View">
+            <line own="left" target="left"/>
+            <line own="bottom" target="bottom"/>
+        </anchors>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">891</property>
+        <property key="z" type="double">1</property>
+        <property key="width" type="double">1199</property>
+        <property key="height" type="double">72</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">1199</property>
+        <property key="availableHeight" type="double">72</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">100</property>
+        <property key="cardMinimumWidth" type="int">100</property>
+        <property key="cardMinimumHeight" type="int">100</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+    </gz-gui>
+    <play_pause>true</play_pause>
+    <step>true</step>
+    <start_paused>true</start_paused>
+    <use_event>true</use_event>
+</plugin>
+
+<plugin filename="WorldStats" name="World stats">
+    <gz-gui>
+        <title>World stats</title>
+        <anchors target="3D View">
+            <line own="right" target="right"/>
+            <line own="bottom" target="bottom"/>
+        </anchors>
+        <property key="x" type="double">1211</property>
+        <property key="y" type="double">853</property>
+        <property key="z" type="double">1</property>
+        <property key="width" type="double">290</property>
+        <property key="height" type="double">110</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">floating</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">290</property>
+        <property key="availableHeight" type="double">110</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">false</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">110</property>
+        <property key="cardMinimumWidth" type="int">290</property>
+        <property key="cardMinimumHeight" type="int">110</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+    </gz-gui>
+    <sim_time>true</sim_time>
+    <real_time>true</real_time>
+    <real_time_factor>true</real_time_factor>
+    <iterations>true</iterations>
+  </plugin>
+
+    <!-- Entity tree -->
+  <plugin filename="EntityTree" name="Entity tree">
+    <gz-gui>
+        <property key="x" type="double">0</property>
+        <property key="y" type="double">0</property>
+        <property key="z" type="double">0</property>
+        <property key="width" type="double">400</property>
+        <property key="height" type="double">587</property>
+        <property key="opacity" type="double">1</property>
+        <property key="enabled" type="bool">true</property>
+        <property key="visible" type="bool">true</property>
+        <property key="state" type="string">docked</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="clip" type="bool">false</property>
+        <property key="focus" type="bool">false</property>
+        <property key="activeFocus" type="bool">false</property>
+        <property key="activeFocusOnTab" type="bool">false</property>
+        <property key="rotation" type="double">0</property>
+        <property key="scale" type="double">1</property>
+        <property key="smooth" type="bool">true</property>
+        <property key="antialiasing" type="bool">false</property>
+        <property key="implicitWidth" type="double">0</property>
+        <property key="implicitHeight" type="double">0</property>
+        <property key="availableWidth" type="double">400</property>
+        <property key="availableHeight" type="double">587</property>
+        <property key="padding" type="double">0</property>
+        <property key="topPadding" type="double">0</property>
+        <property key="leftPadding" type="double">0</property>
+        <property key="rightPadding" type="double">0</property>
+        <property key="bottomPadding" type="double">0</property>
+        <property key="spacing" type="double">0</property>
+        <property key="mirrored" type="bool">false</property>
+        <property key="visualFocus" type="bool">false</property>
+        <property key="hovered" type="bool">false</property>
+        <property key="hoverEnabled" type="bool">true</property>
+        <property key="wheelEnabled" type="bool">false</property>
+        <property key="baselineOffset" type="double">0</property>
+        <property key="horizontalPadding" type="double">0</property>
+        <property key="verticalPadding" type="double">0</property>
+        <property key="implicitContentWidth" type="double">0</property>
+        <property key="implicitContentHeight" type="double">0</property>
+        <property key="implicitBackgroundWidth" type="double">0</property>
+        <property key="implicitBackgroundHeight" type="double">0</property>
+        <property key="topInset" type="double">0</property>
+        <property key="leftInset" type="double">0</property>
+        <property key="rightInset" type="double">0</property>
+        <property key="bottomInset" type="double">0</property>
+        <property key="contentWidth" type="double">0</property>
+        <property key="contentHeight" type="double">0</property>
+        <property key="minSize" type="int">50</property>
+        <property key="showDockButton" type="bool">true</property>
+        <property key="showCloseButton" type="bool">true</property>
+        <property key="showCollapseButton" type="bool">true</property>
+        <property key="showTitleBar" type="bool">false</property>
+        <property key="resizable" type="bool">true</property>
+        <property key="standalone" type="bool">false</property>
+        <property key="dockIcon" type="string">▁</property>
+        <property key="collapseIcon" type="string">▴</property>
+        <property key="expandIcon" type="string">▾</property>
+        <property key="floatIcon" type="string">□</property>
+        <property key="closeIcon" type="string">✕</property>
+        <property key="cardBackground" type="string">#00000000</property>
+        <property key="lastHeight" type="int">50</property>
+        <property key="cardMinimumWidth" type="int">400</property>
+        <property key="cardMinimumHeight" type="int">375</property>
+        <property key="pluginToolBarColor" type="string">#607d8b</property>
+        <property key="pluginToolBarTextColor" type="string">#eeeeee</property>
+    </gz-gui>
+  </plugin>
+
+  </gui>
+  
+    <!-- Change max step size to increase the simulation speed but decrease the accuracy. -->
+    <!-- <physics name="10ms" type="ignored"> -->
+    <physics name="1ms" type="ignored">
+      <max_step_size>0.01</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    
+    <plugin
+      filename="gz-sim-physics-system"
+      name="gz::sim::systems::Physics">
+    </plugin>
+
+    <plugin
+      filename="gz-sim-user-commands-system"
+      name="gz::sim::systems::UserCommands">
+    </plugin>
+
+    <plugin
+      filename="gz-sim-scene-broadcaster-system"
+      name="gz::sim::systems::SceneBroadcaster">
+    </plugin>
+
+    <plugin
+      filename="gz-sim-sensors-system"
+      name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+    </plugin>
+
+    <plugin
+      filename="gz-sim-imu-system"
+      name="gz::sim::systems::Imu">
+    </plugin>
+
+    <plugin
+      filename="gz-sim-contact-system"
+      name="gz::sim::systems::Contact">
+    </plugin>
+
+    <plugin
+      filename="gz-sim-navsat-system"
+      name="gz::sim::systems::NavSat">
+    </plugin>
+
+    <light type="directional" name="sun">
+      <!-- Disable shadows to avoid flickering on non-gpu pc, see: 
+           https://github.com/gazebosim/gz-sim/issues/2267 -->
+      <cast_shadows>true</cast_shadows>
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+
+    <scene>
+      <sky>
+        <clouds>
+          <speed>2</speed>
+        </clouds>
+      </sky>
+      <grid>false</grid>
+    </scene>
+
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>200</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>0</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>49.9</latitude_deg>
+      <longitude_deg>8.9</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>90</heading_deg>
+    </spherical_coordinates>
+
+    <model name="heightmap">
+      <static>true</static>
+      <link name="link">
+        <visual name="ground_plane">
+          <geometry>
+            <heightmap>
+              <use_terrain_paging>false</use_terrain_paging>
+              <texture>
+                <diffuse>model://materials/textures/grass_color.jpg</diffuse>
+                <normal>model://materials/textures/grass_normal.jpg</normal>
+                <size>4</size>
+              </texture>
+              <texture>
+                <diffuse>model://materials/textures/dirt_diffusespecular.png</diffuse>
+                <normal>model://materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <!-- <texture>
+                <diffuse>model://materials/textures/grass_color.jpg</diffuse>
+                <normal>model://materials/textures/grass_normal.jpg</normal>
+                <size>4</size>
+              </texture> -->
+              <!-- Without this unused 3. texture the blend between the first 2 doesn"t work -->
+              <texture>
+                <diffuse>model://materials/textures/fungus_diffusespecular.png</diffuse>
+                <normal>model://materials/textures/flat_normal.png</normal>
+                <size>1</size>
+              </texture>
+              <blend>
+                <min_height>0.2</min_height>
+                <fade_dist>0.05</fade_dist>
+              </blend>
+              <!-- <blend>
+                <min_height>0.30000000000000004</min_height>
+                <fade_dist>0.05</fade_dist>
+              </blend> -->
+              <!-- Without this unused 3. texture the blend between the first 2 doesn"t work -->
+              <blend>
+                <min_height>4</min_height>
+                <fade_dist>5</fade_dist>
+              </blend>
+              <uri>/model://heightmaps/world3_heightmap.png</uri>
+              <size>14.3 14.3 0.4</size>
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </visual>
+        <collision name="collision">
+          <geometry>
+            <heightmap>
+              <uri>/model://heightmaps/world3_heightmap.png</uri>
+              <size>14.3 14.3 0.4</size>
+              <pos>0 0 0</pos>
+            </heightmap>
+          </geometry>
+        </collision>
+      </link>
+    </model>
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.7282622853623941 -4.644031914012569 0.30849591736074444 0.0 0.0 4.390334975552039</pose>
+      <name>maize_02_0000</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.7480635821092303 -4.479474372225539 0.30849591736074444 0.0 0.0 2.3656851411225324</pose>
+      <name>maize_01_0001</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.7406002006298875 -4.336836753442595 0.30899922770601135 0.0 0.0 2.283412415574486</pose>
+      <name>maize_02_0002</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.7371977140515904 -4.146154334316786 0.30939098365721257 0.0 0.0 1.3914259796865396</pose>
+      <name>maize_01_0003</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.7223765181514006 -4.001224130943468 0.3114296134924037 0.0 0.0 5.84251706102396</pose>
+      <name>maize_02_0004</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.699736856571874 -3.8176697026425903 0.31492881811184636 0.0 0.0 2.597105002596515</pose>
+      <name>maize_02_0005</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.6823662698346071 -3.666687255798537 0.315867158461235 0.0 0.0 2.428315801106811</pose>
+      <name>maize_02_0006</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.6652192969157071 -3.488412603775926 0.3197394762049105 0.0 0.0 2.292854094547703</pose>
+      <name>maize_01_0007</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.611015002598697 -3.186937481335775 0.3141330002992375 0.0 0.0 1.0990849641237783</pose>
+      <name>maize_01_0008</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.5774291591034264 -3.0259785716461307 0.32036999182591147 0.0 0.0 1.1063032290899992</pose>
+      <name>maize_02_0009</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.5274331479657262 -2.879143216603732 0.31701697252722066 0.0 0.0 0.24496834714065324</pose>
+      <name>maize_02_0010</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.5147873660777815 -2.7399443760905333 0.32739800050386597 0.0 0.0 0.32900964531010246</pose>
+      <name>maize_01_0011</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.4584925980282306 -2.580582522431898 0.3270472006340433 0.0 0.0 2.1819328092975363</pose>
+      <name>maize_01_0012</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.44993515772945 -2.4347877742755832 0.3270472006340433 0.0 0.0 1.5908532472116832</pose>
+      <name>maize_02_0013</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.3752130049443139 -2.3107514208178657 0.31711843461866973 0.0 0.0 4.706669476747175</pose>
+      <name>maize_02_0014</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.3365918393755614 -2.1341261040709165 0.30596246760137785 0.0 0.0 6.14724204566556</pose>
+      <name>maize_02_0015</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.2886779666730446 -1.9991640289008514 0.3035038688727379 0.0 0.0 3.8037427260852748</pose>
+      <name>maize_01_0016</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.231609235228896 -1.8416440255936517 0.31592347658734754 0.0 0.0 2.2500260815272224</pose>
+      <name>maize_02_0017</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.1665421585016542 -1.6792082356728328 0.3148347067724568 0.0 0.0 6.132837854801256</pose>
+      <name>maize_01_0018</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.0439073528545793 -1.3789507990802172 0.3096044985940413 0.0 0.0 1.801755930725353</pose>
+      <name>maize_01_0019</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.0099716839897104 -1.2583299052660437 0.30686201307411953 0.0 0.0 0.21693427063672927</pose>
+      <name>maize_02_0020</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.931787088128249 -1.1483373337837182 0.3064185240099091 0.0 0.0 4.70966481072127</pose>
+      <name>maize_02_0021</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.8881603475748435 -1.0210388464791107 0.31042402918793166 0.0 0.0 3.423587888017241</pose>
+      <name>maize_02_0022</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.7384858972767246 -0.7286723104170881 0.30721440606971795 0.0 0.0 6.076396522482402</pose>
+      <name>maize_02_0023</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.6343906752514162 -0.5642738451078807 0.29177690063381434 0.0 0.0 3.27596408516785</pose>
+      <name>maize_01_0024</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.5387910824503458 -0.42201644593529164 0.2867160230655865 0.0 0.0 4.7010594272255215</pose>
+      <name>maize_02_0025</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.4681591709130951 -0.2908935224669965 0.2716785924578345 0.0 0.0 1.760055248927224</pose>
+      <name>maize_01_0026</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.38405801618964464 -0.13887805289944055 0.27527691592130593 0.0 0.0 5.9574328953458995</pose>
+      <name>maize_01_0027</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.2682306390011625 -0.014852607299389853 0.27948974255717046 0.0 0.0 3.787370221916887</pose>
+      <name>maize_01_0028</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.19709707351734596 0.12459383624716115 0.28645103205347316 0.0 0.0 3.157815737328833</pose>
+      <name>maize_01_0029</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.07306583119870926 0.25561120499586465 0.29287713488617084 0.0 0.0 3.8713890311735217</pose>
+      <name>maize_01_0030</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.006578230453886735 0.366101568135078 0.294211000789851 0.0 0.0 0.21928211833936725</pose>
+      <name>maize_01_0031</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.11162463810393662 0.4966869078302557 0.28871503131466203 0.0 0.0 1.4262403308914215</pose>
+      <name>maize_01_0032</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.20886468261197988 0.6594304085644048 0.28000965663779803 0.0 0.0 0.9384958260727161</pose>
+      <name>maize_01_0033</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-0.3198083947219269 0.7518614802393689 0.28368134393503625 0.0 0.0 4.941586675284018</pose>
+      <name>maize_02_0034</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.46356517136210373 0.9026634000550081 0.27760233906515297 0.0 0.0 4.488777879529443</pose>
+      <name>maize_01_0035</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-0.5603959676091838 0.9931669126467754 0.2679795589094593 0.0 0.0 4.216372312101605</pose>
+      <name>maize_02_0036</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.6795659916773232 1.1279985993937451 0.2745142066859944 0.0 0.0 1.2019341708692388</pose>
+      <name>maize_01_0037</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.7684700333453188 1.2194760512269136 0.2692012362536292 0.0 0.0 3.8017041221770738</pose>
+      <name>maize_01_0038</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.8590924703633337 1.3080641297501936 0.26602579472855115 0.0 0.0 1.78438816488008</pose>
+      <name>maize_01_0039</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.9971944194557777 1.41655601729925 0.26126924556171677 0.0 0.0 1.1437283401813907</pose>
+      <name>maize_01_0040</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-1.1281149055498028 1.5391416165493927 0.26794205805567467 0.0 0.0 5.597407667912287</pose>
+      <name>maize_02_0041</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-1.2755211315495485 1.6757654398258826 0.25360042209528155 0.0 0.0 0.7978420361394503</pose>
+      <name>maize_01_0042</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-1.3842186276780035 1.7483969832896813 0.25575005200216316 0.0 0.0 3.5381086917912876</pose>
+      <name>maize_01_0043</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-1.5136823182152552 1.8476694806923097 0.2563289315738326 0.0 0.0 0.6746817612630485</pose>
+      <name>maize_02_0044</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-1.682763877612624 1.961091496773296 0.2645020687467229 0.0 0.0 2.7522056479656096</pose>
+      <name>maize_01_0045</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.8456361687635363 -4.657106339873422 0.3369775281550862 0.0 0.0 2.4720144723201654</pose>
+      <name>maize_02_0046</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.847773163580894 -4.5135714633795905 0.3487187056476379 0.0 0.0 3.6953879233774365</pose>
+      <name>maize_01_0047</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.850568418256721 -4.3498746463272155 0.3593548931444064 0.0 0.0 2.414699972091118</pose>
+      <name>maize_01_0048</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.8258783397793232 -4.190168328636708 0.36196433017447904 0.0 0.0 1.870547000965129</pose>
+      <name>maize_02_0049</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.8188146645789605 -4.079343146487977 0.36196433017447904 0.0 0.0 0.6934626420162341</pose>
+      <name>maize_02_0050</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.808492397838614 -3.9054021602866174 0.35112007950665286 0.0 0.0 3.7300988048982577</pose>
+      <name>maize_02_0051</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.7936051989860955 -3.736672272429419 0.34347084489268337 0.0 0.0 2.90105997703989</pose>
+      <name>maize_01_0052</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.796044605458567 -3.6122250738852895 0.34347084489268337 0.0 0.0 1.0710168510508355</pose>
+      <name>maize_02_0053</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.75191116737558 -3.4565947704852213 0.3494426996341893 0.0 0.0 0.2870275336105023</pose>
+      <name>maize_02_0054</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.7441012140540977 -3.294240845420145 0.3339741706678441 0.0 0.0 0.7916430217846973</pose>
+      <name>maize_01_0055</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.709307725645292 -3.090360712299623 0.3274460344009182 0.0 0.0 4.345385474677514</pose>
+      <name>maize_02_0056</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.6681333436096155 -2.931091378899424 0.3225506790597045 0.0 0.0 2.436279757390216</pose>
+      <name>maize_01_0057</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.638718120193351 -2.791007493749424 0.3272653033127093 0.0 0.0 4.983289323877885</pose>
+      <name>maize_02_0058</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.6267237819283427 -2.637211667125083 0.3327524186175123 0.0 0.0 5.65392802493543</pose>
+      <name>maize_02_0059</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.5709412888693555 -2.4735121018297628 0.3366362440166335 0.0 0.0 4.250469871637332</pose>
+      <name>maize_01_0060</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.5485064895097524 -2.3530369646401037 0.3366362440166335 0.0 0.0 2.208688498312646</pose>
+      <name>maize_01_0061</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.5171428950641044 -2.1797998654494934 0.34147410696258135 0.0 0.0 5.934504304444802</pose>
+      <name>maize_01_0062</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.438941685357782 -2.007528646248368 0.3387614082157356 0.0 0.0 2.1837899437370925</pose>
+      <name>maize_02_0063</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.4079832041319804 -1.829951919397713 0.3331608917837157 0.0 0.0 5.903424689750271</pose>
+      <name>maize_02_0064</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.348914330531464 -1.7135043605268296 0.33437769494855085 0.0 0.0 3.036216928420666</pose>
+      <name>maize_02_0065</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.3161362431255093 -1.5675368540751755 0.3236397101915456 0.0 0.0 3.0631165473268185</pose>
+      <name>maize_01_0066</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.2467760924176106 -1.4075291832137253 0.31556677720223114 0.0 0.0 5.20377925826482</pose>
+      <name>maize_02_0067</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.1930220963356133 -1.2924818740569433 0.3044606711378155 0.0 0.0 0.16526892029430382</pose>
+      <name>maize_02_0068</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.05830428638716 -0.9742395197685033 0.2917170351128699 0.0 0.0 0.9156140472739991</pose>
+      <name>maize_01_0069</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.9927726891016246 -0.8449818759586637 0.28258386219906734 0.0 0.0 5.429943066146596</pose>
+      <name>maize_01_0070</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.9584807405609737 -0.7268127254924003 0.2839284215391458 0.0 0.0 1.7711057897410685</pose>
+      <name>maize_01_0071</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.8880608632332465 -0.6062839546167275 0.28413785009169684 0.0 0.0 3.29353945674209</pose>
+      <name>maize_02_0072</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.7379341720998926 -0.2646624552000453 0.2745726270267033 0.0 0.0 5.335717070984734</pose>
+      <name>maize_01_0073</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.5738827269491766 0.029390254050933328 0.2745921646900782 0.0 0.0 3.1860688653639935</pose>
+      <name>maize_01_0074</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.491644148142186 0.1871878591208328 0.26874125802918025 0.0 0.0 5.462929819044929</pose>
+      <name>maize_02_0075</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.3978855218070922 0.31128576381774564 0.2522193713899509 0.0 0.0 2.539681129508993</pose>
+      <name>maize_02_0076</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.2828219899618318 0.4576701626376999 0.2562529564620162 0.0 0.0 1.77742003075193</pose>
+      <name>maize_01_0077</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.1220655481255517 0.7164482120769592 0.26144517244632354 0.0 0.0 4.978194457547021</pose>
+      <name>maize_01_0078</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.0106089451387792 0.8438787588927815 0.2637013140475196 0.0 0.0 0.6441971001540345</pose>
+      <name>maize_02_0079</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.9323511703960156 0.9428423795263682 0.26358161004011305 0.0 0.0 3.417828308186361</pose>
+      <name>maize_02_0080</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.8164914094034507 1.0665346932255 0.26307633940011294 0.0 0.0 5.069877230639877</pose>
+      <name>maize_02_0081</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.7418352042126933 1.2089061485493513 0.2583040921980037 0.0 0.0 5.9158094903663185</pose>
+      <name>maize_01_0082</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.6471600574261548 1.3129245564252594 0.2658172274923475 0.0 0.0 2.977287534115447</pose>
+      <name>maize_02_0083</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.5144842829301454 1.4351773413442404 0.266608296825441 0.0 0.0 2.233387677860716</pose>
+      <name>maize_01_0084</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.3929637313703326 1.5961096651375088 0.25997062597143433 0.0 0.0 3.1380278702831057</pose>
+      <name>maize_01_0085</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.2995855076795001 1.7092015354854446 0.2630527033554528 0.0 0.0 1.4208875360705482</pose>
+      <name>maize_01_0086</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.18992335412468309 1.8489936096728972 0.26594425413760836 0.0 0.0 6.116043620811665</pose>
+      <name>maize_02_0087</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.032661673949663586 1.9687041322347367 0.2665614634795663 0.0 0.0 3.025965020047527</pose>
+      <name>maize_01_0088</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-0.03503368449403298 2.0641838314419862 0.25006456365502433 0.0 0.0 2.348945031670078</pose>
+      <name>maize_02_0089</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.1843921715262905 2.170261516883844 0.2452296304640177 0.0 0.0 3.492704348632412</pose>
+      <name>maize_01_0090</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-0.2849420955578893 2.2782241821806224 0.23927137020196462 0.0 0.0 2.2051296749114844</pose>
+      <name>maize_02_0091</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.41472958442920727 2.394362441720186 0.24890335700119515 0.0 0.0 1.5540802834570286</pose>
+      <name>maize_01_0092</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>-0.5372693951853692 2.4790688080919 0.25808408793239174 0.0 0.0 0.3858145556381594</pose>
+      <name>maize_02_0093</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.6669520958959431 2.6074840857870356 0.2594093029291113 0.0 0.0 4.8141459147143</pose>
+      <name>maize_01_0094</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.7817686043687059 2.665909215053243 0.25525645029497657 0.0 0.0 0.21396889830079852</pose>
+      <name>maize_01_0095</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-1.050004827537983 2.8690613183479172 0.2489406912720018 0.0 0.0 3.53930479071779</pose>
+      <name>maize_01_0096</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.930283751314427 -4.66701399004059 0.3635646529312282 0.0 0.0 3.0056859940118876</pose>
+      <name>maize_02_0097</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.959115705290822 -4.454495847499964 0.3577605322998582 0.0 0.0 6.067600004130633</pose>
+      <name>maize_02_0098</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.956096566332749 -4.330859685420659 0.3577605322998582 0.0 0.0 4.215427412244768</pose>
+      <name>maize_01_0099</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.9333416652297863 -4.193671419624982 0.34860989108377316 0.0 0.0 1.5813851874432863</pose>
+      <name>maize_01_0100</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.941815807989352 -4.022708930868248 0.3464961480835671 0.0 0.0 3.95159191492623</pose>
+      <name>maize_02_0101</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.9105618637703348 -3.8497145558810164 0.3513174253616893 0.0 0.0 5.320607149644545</pose>
+      <name>maize_02_0102</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.9131224676371072 -3.7031121101126194 0.3513174253616893 0.0 0.0 5.952962261989583</pose>
+      <name>maize_01_0103</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.8743477141893 -3.515431212755442 0.33078701590369264 0.0 0.0 2.5336197349041423</pose>
+      <name>maize_01_0104</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.855548091046339 -3.363286003063625 0.3241759174360726 0.0 0.0 4.4032912809104925</pose>
+      <name>maize_01_0105</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.8242053410212495 -3.182491731939502 0.3273828635399949 0.0 0.0 2.1753465350652688</pose>
+      <name>maize_01_0106</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.826560103385013 -3.0302203444788045 0.3292774820980233 0.0 0.0 5.612648862624732</pose>
+      <name>maize_02_0107</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.7894670052764425 -2.907834844212462 0.33768621031578694 0.0 0.0 0.8417189463795164</pose>
+      <name>maize_01_0108</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.765906145503349 -2.750848757963568 0.3404253403735988 0.0 0.0 2.747734431432342</pose>
+      <name>maize_01_0109</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.755289246265588 -2.5916437115321176 0.3341047062865771 0.0 0.0 5.637221450004626</pose>
+      <name>maize_02_0110</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.7260426106531845 -2.4799797901015306 0.3341047062865771 0.0 0.0 0.9864694317504002</pose>
+      <name>maize_02_0111</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.671854853106103 -2.3028446415625097 0.3285883637715554 0.0 0.0 5.507936419535097</pose>
+      <name>maize_02_0112</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.6293933690379276 -2.1352406703719895 0.33789782515951194 0.0 0.0 1.8179603613994237</pose>
+      <name>maize_02_0113</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.5881328110636996 -1.9435642969117457 0.3320248027248708 0.0 0.0 5.609176033912147</pose>
+      <name>maize_01_0114</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.5454411804776864 -1.8347500661673117 0.3320248027248708 0.0 0.0 3.022259717855586</pose>
+      <name>maize_02_0115</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.522573780590432 -1.6845770892974166 0.32433683349454445 0.0 0.0 3.3825919489836944</pose>
+      <name>maize_02_0116</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.469599732642906 -1.5359212830426459 0.3187795244418803 0.0 0.0 3.9215144156368607</pose>
+      <name>maize_01_0117</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.414038345359181 -1.3730260888305876 0.3099059368059268 0.0 0.0 0.596027711933075</pose>
+      <name>maize_01_0118</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.3490863110308178 -1.206878837494484 0.294388732182823 0.0 0.0 2.10158874440812</pose>
+      <name>maize_02_0119</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.2743448404743685 -1.0420258230784714 0.2904792676562501 0.0 0.0 4.893891146107228</pose>
+      <name>maize_01_0120</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.2310357575298347 -0.8947295679073594 0.28937536698184124 0.0 0.0 2.7622337582266057</pose>
+      <name>maize_02_0121</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.1659090682724615 -0.7337374590130029 0.29545256518614754 0.0 0.0 3.5134701765924192</pose>
+      <name>maize_02_0122</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.114381393506987 -0.5742349041729461 0.297911437642699 0.0 0.0 5.662354192652819</pose>
+      <name>maize_02_0123</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.038427701547591 -0.4448286060090477 0.3014450863930397 0.0 0.0 2.4324714399022773</pose>
+      <name>maize_02_0124</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.9734508140769558 -0.2853003612652102 0.2992180035078091 0.0 0.0 5.0889151844774245</pose>
+      <name>maize_01_0125</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.8944130076290433 -0.09146957422335254 0.2984329101658511 0.0 0.0 5.459255164094848</pose>
+      <name>maize_02_0126</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.800960644848865 0.022464045104911966 0.2909539501454403 0.0 0.0 3.7547986353554372</pose>
+      <name>maize_01_0127</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.7347507920196357 0.19614426066641488 0.27988292485304134 0.0 0.0 2.178274814904581</pose>
+      <name>maize_02_0128</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.6564605288494736 0.32815768103027654 0.27602974575440664 0.0 0.0 6.003370282640885</pose>
+      <name>maize_02_0129</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.5817687662015443 0.4553288846409761 0.2791110462716924 0.0 0.0 1.228597688819236</pose>
+      <name>maize_01_0130</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.4903764363198 0.5862709966467453 0.273999343940905 0.0 0.0 4.704564878403861</pose>
+      <name>maize_02_0131</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.449120552491337 0.7120639570233499 0.26268150023308445 0.0 0.0 2.624317239228396</pose>
+      <name>maize_02_0132</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.343916326608091 0.8320040139750801 0.249944601759138 0.0 0.0 5.592158037270689</pose>
+      <name>maize_01_0133</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.250500020030871 1.006856902071008 0.2552084242333255 0.0 0.0 4.385472509458293</pose>
+      <name>maize_02_0134</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.1817964357736233 1.10216770105691 0.25975300017520286 0.0 0.0 5.514980139473334</pose>
+      <name>maize_02_0135</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.101891957524594 1.2378614086629867 0.25976094581464393 0.0 0.0 0.20759790035105752</pose>
+      <name>maize_02_0136</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.9909490351954413 1.3793661997559337 0.2707753124966029 0.0 0.0 1.9826331690892478</pose>
+      <name>maize_02_0137</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.8757601829790644 1.5309912352308874 0.2748890317051836 0.0 0.0 0.2600279663476514</pose>
+      <name>maize_01_0138</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.805149918005938 1.6405531710773396 0.2725285637431675 0.0 0.0 4.480628319133421</pose>
+      <name>maize_01_0139</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.7098700333295356 1.756344009283147 0.27481786410916864 0.0 0.0 0.9839024155402818</pose>
+      <name>maize_02_0140</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.627049198998931 1.8592732061042518 0.2836874973630827 0.0 0.0 2.416890736084799</pose>
+      <name>maize_01_0141</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.53257643078889 1.976497603931736 0.29254315852101465 0.0 0.0 2.6199257783067598</pose>
+      <name>maize_01_0142</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.4244656873288517 2.1170418488887224 0.2904402152552412 0.0 0.0 3.2425824340856546</pose>
+      <name>maize_02_0143</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.2740274655413457 2.249947920813595 0.2914660589835804 0.0 0.0 4.97112807098427</pose>
+      <name>maize_01_0144</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.1784961974018775 2.3678976726262944 0.2904652254112729 0.0 0.0 4.987561867322576</pose>
+      <name>maize_01_0145</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.0816647000578934 2.4801369982466754 0.27813968127769356 0.0 0.0 6.019482621765989</pose>
+      <name>maize_02_0146</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.9812304831721596 2.5725830303135275 0.27813968127769356 0.0 0.0 3.193404704777231</pose>
+      <name>maize_02_0147</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.8789595101363327 2.6822268610395694 0.28199819531817777 0.0 0.0 5.766620502036891</pose>
+      <name>maize_01_0148</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.76401958383896 2.7966144828229167 0.28382903926719305 0.0 0.0 5.069071003080052</pose>
+      <name>maize_02_0149</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.667420573918834 2.899989615580645 0.2709037652003771 0.0 0.0 5.356074602933507</pose>
+      <name>maize_01_0150</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.5370682169077189 3.005727464058542 0.26982836245740877 0.0 0.0 3.8981684873960862</pose>
+      <name>maize_02_0151</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.42222470496409936 3.0997078832838136 0.26537138128413224 0.0 0.0 1.9889422313020855</pose>
+      <name>maize_02_0152</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.30249791934510795 3.1858615248643245 0.271548500065625 0.0 0.0 0.9413281829364261</pose>
+      <name>maize_02_0153</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.18645797624133864 3.3000397013005793 0.27780208616180196 0.0 0.0 4.450924582504502</pose>
+      <name>maize_01_0154</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.07239807387960541 3.403278401660283 0.2777831706450477 0.0 0.0 0.9824343347877215</pose>
+      <name>maize_01_0155</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.05735503166212684 3.531676353182985 0.28418165721601696 0.0 0.0 1.7069189265264084</pose>
+      <name>maize_01_0156</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.17040991196060584 3.597377018838162 0.28347769033243403 0.0 0.0 1.5684148231995534</pose>
+      <name>maize_01_0157</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>-0.3195148700189284 3.6976377920227845 0.2685671343467901 0.0 0.0 4.963810534133274</pose>
+      <name>maize_01_0158</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>5.054367199169555 -4.670183739639705 0.3893962695839288 0.0 0.0 3.9247590086271353</pose>
+      <name>maize_01_0159</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>5.047735461542901 -4.532244056010494 0.3862063811622289 0.0 0.0 4.915026353492397</pose>
+      <name>maize_02_0160</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>5.043368017812709 -4.373910987266489 0.3862063811622289 0.0 0.0 4.878803079652011</pose>
+      <name>maize_01_0161</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>5.023760390429073 -4.2016923521568845 0.37185937730399177 0.0 0.0 3.57133141211234</pose>
+      <name>maize_01_0162</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>5.040920536798849 -4.039096265012218 0.36596083153185976 0.0 0.0 4.941671085693446</pose>
+      <name>maize_01_0163</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.9949475578787315 -3.614667941255476 0.35721997978387704 0.0 0.0 4.401617284641626</pose>
+      <name>maize_02_0164</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.958237426091866 -3.4347058589625004 0.34299159926929335 0.0 0.0 5.1843999379452566</pose>
+      <name>maize_01_0165</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.9525184801589806 -3.3090157185747775 0.3360718757585431 0.0 0.0 1.0623447988547527</pose>
+      <name>maize_01_0166</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.9454525694387375 -3.154282487025271 0.3360718757585431 0.0 0.0 1.1304900788960361</pose>
+      <name>maize_02_0167</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.916378315849645 -2.9865538489846637 0.3379775691864021 0.0 0.0 2.128817723584028</pose>
+      <name>maize_01_0168</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.892031932855682 -2.8213523558616447 0.33441909275054443 0.0 0.0 2.390259092739647</pose>
+      <name>maize_01_0169</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.854751648529035 -2.69084603060952 0.3364874864512022 0.0 0.0 1.5780465409839655</pose>
+      <name>maize_02_0170</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.843109181270195 -2.533014898078133 0.3364874864512022 0.0 0.0 3.4959090639858577</pose>
+      <name>maize_02_0171</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.832301072989688 -2.384677227987576 0.3398786607655928 0.0 0.0 2.956757324187033</pose>
+      <name>maize_02_0172</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.763139122255654 -2.217915347126213 0.3374417250242397 0.0 0.0 3.838654677511581</pose>
+      <name>maize_02_0173</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.763102895606517 -2.0709316262793087 0.3311761659264855 0.0 0.0 3.797684262945443</pose>
+      <name>maize_02_0174</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.7068903120965295 -1.9062207537802363 0.3249873447760043 0.0 0.0 0.6666517390524089</pose>
+      <name>maize_02_0175</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.67215559421644 -1.7395643073409572 0.32907819287506124 0.0 0.0 2.474761969259478</pose>
+      <name>maize_02_0176</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.634642391057783 -1.6149007431361015 0.32884551370494064 0.0 0.0 4.41554086604311</pose>
+      <name>maize_02_0177</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.603665667859161 -1.4894242594321434 0.32884551370494064 0.0 0.0 2.964584195830726</pose>
+      <name>maize_01_0178</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.520074733971613 -1.2851242060093315 0.3128881061920725 0.0 0.0 1.2346403655003837</pose>
+      <name>maize_02_0179</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.486480696142126 -1.1230901942834932 0.2950517999693423 0.0 0.0 1.8019951454663719</pose>
+      <name>maize_01_0180</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.434570183277081 -0.9514592854593774 0.2860845707919524 0.0 0.0 5.152332718683385</pose>
+      <name>maize_02_0181</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.385974544989455 -0.8123672591268459 0.2728168700387949 0.0 0.0 0.6110316002052423</pose>
+      <name>maize_02_0182</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.309807521732202 -0.6671616662922101 0.2642599096231926 0.0 0.0 4.108383623423654</pose>
+      <name>maize_01_0183</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>4.2369009275208676 -0.4776723137897544 0.26574296465186426 0.0 0.0 3.323990721572602</pose>
+      <name>maize_02_0184</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.18493508456572 -0.32920076747146887 0.2630186865384127 0.0 0.0 1.9999391388972307</pose>
+      <name>maize_01_0185</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.136163020816149 -0.21637878054570436 0.2620910112797707 0.0 0.0 1.4101993567859905</pose>
+      <name>maize_01_0186</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>4.045958113567721 -0.02015710095670552 0.27762210702566303 0.0 0.0 3.653932265800668</pose>
+      <name>maize_01_0187</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.9693342616757903 0.11854853494006602 0.2768193610667015 0.0 0.0 1.474855362630438</pose>
+      <name>maize_01_0188</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.902717929881611 0.2712558202929224 0.27978062783729385 0.0 0.0 4.084570220010383</pose>
+      <name>maize_02_0189</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.834418865837458 0.4631152015314245 0.28707157306345216 0.0 0.0 0.6194732892643798</pose>
+      <name>maize_02_0190</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.7800088488223373 0.5879318228081808 0.30253618664349524 0.0 0.0 1.54580691962348</pose>
+      <name>maize_01_0191</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.6946487627265663 0.7459371849272197 0.3035075801855842 0.0 0.0 2.72924233596799</pose>
+      <name>maize_01_0192</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.605415121268271 0.9073481447187265 0.29550545197386696 0.0 0.0 0.15065407948772183</pose>
+      <name>maize_01_0193</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.5067557362076682 1.0611295982626165 0.29545034121044494 0.0 0.0 0.6805439065352138</pose>
+      <name>maize_01_0194</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.431775480200108 1.1847581060871724 0.2958543071167449 0.0 0.0 2.4793770940767916</pose>
+      <name>maize_01_0195</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.3520283121101055 1.3175483924558948 0.2968572611044423 0.0 0.0 4.2366031412269</pose>
+      <name>maize_02_0196</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>3.251996979295294 1.4563490407911148 0.2850930599870409 0.0 0.0 5.547054629797584</pose>
+      <name>maize_02_0197</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.1841963488048615 1.6037240064231533 0.27562597073319817 0.0 0.0 4.813102966292108</pose>
+      <name>maize_01_0198</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>3.073824974059158 1.7411956711649896 0.2585828957593847 0.0 0.0 0.08651902494154931</pose>
+      <name>maize_01_0199</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.9772036285024335 1.8707895287651857 0.24495229772718524 0.0 0.0 1.36141560177325</pose>
+      <name>maize_02_0200</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.902357133242255 2.0187404605153887 0.22863568810013907 0.0 0.0 4.441435895194275</pose>
+      <name>maize_02_0201</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.8044677800697544 2.1442756054621794 0.22798962174778517 0.0 0.0 5.074497539849862</pose>
+      <name>maize_02_0202</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.722981725941489 2.239653459163722 0.22798962174778517 0.0 0.0 5.692309983984193</pose>
+      <name>maize_01_0203</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.6066275822463707 2.371383791298414 0.23857356222984327 0.0 0.0 1.278486133742217</pose>
+      <name>maize_02_0204</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.5194596226271058 2.490462876507401 0.2424389957234182 0.0 0.0 2.887778109987984</pose>
+      <name>maize_02_0205</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>2.422910848048878 2.6090896196251183 0.2415957250772178 0.0 0.0 1.2460448901830794</pose>
+      <name>maize_02_0206</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.3337039633594285 2.734112803923784 0.25437133768739356 0.0 0.0 5.77684532399477</pose>
+      <name>maize_01_0207</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.2364150722829703 2.8572619900446012 0.2577106174802567 0.0 0.0 5.438142620929415</pose>
+      <name>maize_01_0208</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>2.0999787606363114 2.9832419824512675 0.24961857970717324 0.0 0.0 4.00653929896171</pose>
+      <name>maize_01_0209</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.998508210889307 3.091248613578272 0.24603349396802826 0.0 0.0 4.555482770095642</pose>
+      <name>maize_01_0210</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.9192295697450716 3.1953230971434063 0.24982207221994643 0.0 0.0 1.732890055120404</pose>
+      <name>maize_02_0211</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.7813070736495664 3.327465890159936 0.2538288491463422 0.0 0.0 3.1960615447032032</pose>
+      <name>maize_01_0212</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.682362737878628 3.4460250389957343 0.2655740751247301 0.0 0.0 5.1688743326650295</pose>
+      <name>maize_02_0213</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.5754029642944798 3.5578906503319514 0.27223825038385263 0.0 0.0 4.677572024296833</pose>
+      <name>maize_01_0214</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.43275001733574 3.6612507795533267 0.274001380440188 0.0 0.0 2.4369386045370782</pose>
+      <name>maize_02_0215</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>1.3129281670224882 3.8048747410300328 0.2726155269165353 0.0 0.0 1.4569910668173394</pose>
+      <name>maize_01_0216</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.1899445350664868 3.8783455660702666 0.2788742966436779 0.0 0.0 4.499314065317939</pose>
+      <name>maize_02_0217</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>1.0893696343330035 3.972385232418275 0.2788742966436779 0.0 0.0 6.054600476572983</pose>
+      <name>maize_02_0218</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.9577682634606911 4.076725217519498 0.27760595366721175 0.0 0.0 2.5023820176453464</pose>
+      <name>maize_02_0219</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.8525711362228855 4.1748072734073345 0.28279850101623527 0.0 0.0 1.1006618510146944</pose>
+      <name>maize_01_0220</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.7071751163359535 4.317924776584133 0.2844076125433394 0.0 0.0 0.24306342781123783</pose>
+      <name>maize_01_0221</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_01</uri>
+      <pose>0.6175858556435435 4.400863335351764 0.2941553697612972 0.0 0.0 5.535857448632051</pose>
+      <name>maize_01_0222</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.4695526699466773 4.4849865816938665 0.2963443996481842 0.0 0.0 1.91562650410293</pose>
+      <name>maize_02_0223</name>
+      <static>false</static>
+    </include> 
+     
+     
+    <include>
+      <uri>model://maize_02</uri>
+      <pose>0.3250623387169641 4.6089449576984345 0.30140054855450527 0.0 0.0 5.1668109346462385</pose>
+      <name>maize_02_0224</name>
+      <static>false</static>
+    </include> 
+    </world>
+</sdf>

@@ -1,0 +1,160 @@
+# gz topic published by the simulator core
+- ros_topic_name: "clock"
+  gz_topic_name: "clock"
+  ros_type_name: "rosgraph_msgs/msg/Clock"
+  gz_type_name: "gz.msgs.Clock"
+  direction: GZ_TO_ROS
+
+# gz topic published by IMU plugin
+- ros_topic_name: "imu"
+  gz_topic_name: "imu"
+  ros_type_name: "sensor_msgs/msg/Imu"
+  gz_type_name: "gz.msgs.IMU"
+  direction: GZ_TO_ROS
+
+# Navsat_gpsfix configuration.
+- ros_topic_name: "gps/fix"
+  gz_topic_name: "gps/fix"
+  ros_type_name: "sensor_msgs/msg/NavSatFix"
+  gz_type_name: "gz.msgs.NavSat"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Lidar)
+- ros_topic_name: "scan"
+  gz_topic_name: "scan"
+  ros_type_name: "sensor_msgs/msg/LaserScan"
+  gz_type_name: "gz.msgs.LaserScan"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Base Bumper Contact)
+- ros_topic_name: "base_collisions"
+  gz_topic_name: "base_collisions"
+  ros_type_name: "ros_gz_interfaces/msg/Contacts"
+  gz_type_name: "gz.msgs.Contacts"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Front Left Wheel Bumper Contact)
+- ros_topic_name: "front_left_collisions"
+  gz_topic_name: "front_left_collisions"
+  ros_type_name: "ros_gz_interfaces/msg/Contacts"
+  gz_type_name: "gz.msgs.Contacts"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Front Right Wheel Bumper Contact)
+- ros_topic_name: "front_right_collisions"
+  gz_topic_name: "front_right_collisions"
+  ros_type_name: "ros_gz_interfaces/msg/Contacts"
+  gz_type_name: "gz.msgs.Contacts"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Rear Left Wheel Bumper Contact)
+- ros_topic_name: "rear_left_collisions"
+  gz_topic_name: "rear_left_collisions"
+  ros_type_name: "ros_gz_interfaces/msg/Contacts"
+  gz_type_name: "gz.msgs.Contacts"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Rear Right Wheel Bumper Contact)
+- ros_topic_name: "rear_right_collisions"
+  gz_topic_name: "rear_right_collisions"
+  ros_type_name: "ros_gz_interfaces/msg/Contacts"
+  gz_type_name: "gz.msgs.Contacts"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Left Camera)
+- ros_topic_name: "left_camera/camera_info"
+  gz_topic_name: "left_camera/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Right Camera)
+- ros_topic_name: "right_camera/camera_info"
+  gz_topic_name: "right_camera/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published by Sensors plugin (Center ZED Camera)
+- ros_topic_name: "zed2_camera_center/camera_info"
+  gz_topic_name: "zed2_camera_center/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED2 camera center info)
+- ros_topic_name: "zed2_camera_center/camera_info"
+  gz_topic_name: "zed2_camera_center/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED2 left camera info)
+- ros_topic_name: "zed2_left_raw/camera_info"
+  gz_topic_name: "zed2_left_raw/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED2 right raw camera info)
+- ros_topic_name: "zed2_right_raw/camera_info"
+  gz_topic_name: "zed2_right_raw/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED2 right rect camera info)
+- ros_topic_name: "zed2_right/camera_info"
+  gz_topic_name: "zed2_right/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED depth camera info)
+- ros_topic_name: "zed2_depth/camera_info"
+  gz_topic_name: "zed2_depth/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED depth camera point cloud)
+- ros_topic_name: "zed2_depth_camera/points"
+  gz_topic_name: "zed2_depth_camera/points"
+  ros_type_name: "sensor_msgs/msg/PointCloud2"
+  gz_type_name: "gz.msgs.PointCloudPacked"
+  direction: GZ_TO_ROS
+
+# gz topic published for Sensors plugin (ZED2 right camera info)
+- ros_topic_name: "zed2_right_raw/camera_info"
+  gz_topic_name: "zed2_right_raw/camera_info"
+  ros_type_name: "sensor_msgs/msg/CameraInfo"
+  gz_type_name: "gz.msgs.CameraInfo"
+  direction: GZ_TO_ROS
+
+ # gz topic published by DiffDrive plugin
+- ros_topic_name: "odom"
+  gz_topic_name: "odom"
+  ros_type_name: "nav_msgs/msg/Odometry"
+  gz_type_name: "gz.msgs.Odometry"
+  direction: GZ_TO_ROS
+
+# gz topic published by DiffDrive plugin
+- ros_topic_name: "tf"
+  gz_topic_name: "tf"
+  ros_type_name: "tf2_msgs/msg/TFMessage"
+  gz_type_name: "gz.msgs.Pose_V"
+  direction: GZ_TO_ROS
+
+# gz topic subscribed to by DiffDrive plugin
+- ros_topic_name: "robot_base_controller/cmd_vel_unstamped"
+  gz_topic_name: "cmd_vel"
+  ros_type_name: "geometry_msgs/msg/Twist"
+  gz_type_name: "gz.msgs.Twist"
+  direction: ROS_TO_GZ
+
+# gz topic published by JointState plugin
+- ros_topic_name: "joint_states"
+  gz_topic_name: "joint_states"
+  ros_type_name: "sensor_msgs/msg/JointState"
+  gz_type_name: "gz.msgs.Model"
+  direction: GZ_TO_ROS
