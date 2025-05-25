@@ -53,6 +53,8 @@ class CornRowNavigator(Node):
         self.robot_current_orientation = None
         self.robot_start_orientation = None
         self.target_yaw = None
+        self.target_x = None
+        self.target_x_reached = False
         self.rotation_timer = self.create_timer(0.05, self.rotation_callback)
         self.rotation_timer.cancel()
 
@@ -67,7 +69,7 @@ class CornRowNavigator(Node):
         if self.status == "navigate":
             self.robot_start_orientation = orientation
 
-        # self.get_logger().info(f"positions : x={position.x},y={position.y}, z={position.z}")
+        self.get_logger().info(f"positions : x={position.x},y={position.y}, z={position.z}")
         # self.get_logger().info(f"current_orr: x={orientation.x}, y={orientation.y}, z={orientation.z}, w={orientation.w}")
         # self.get_logger().info(f"start_orr: x={self.robot_start_orientation.x}, y={self.robot_start_orientation.y}, z={self.robot_start_orientation.z}, w={self.robot_start_orientation.w}")
 
@@ -83,6 +85,13 @@ class CornRowNavigator(Node):
             else:
                 self.no_detection_counter += 1
                 if self.no_detection_counter > 10:
+                    if self.status == "navigate":
+                        is_reached = self.is_goal_reached(cv_image) 
+                        if is_reached:
+                            self.get_logger().info("Objectif atteint, arrêt du robot.")
+                            self.stop_robot()
+                            return True
+                        
                     self.status = "rotating"
                     self.search_for_rows()
                 else:
@@ -91,18 +100,12 @@ class CornRowNavigator(Node):
         except Exception as e:
             self.get_logger().error(f"Erreur traitement image: {e}")
 
-    def start_turn(self):
-        """Définir l'angle cible pour un demi-tour de 180°"""
-        if self.robot_current_orientation is not None:
-            self.start_yaw = self.quaternion_to_yaw(self.robot_current_orientation)
-            self.target_yaw = self.normalize_angle(self.start_yaw + (2 * math.pi))
-            self.get_logger().info(f"Début rotation : yaw initial={self.start_yaw}, yaw cible={self.target_yaw}")
-            
+          
     def detect_corn_rows(self, image):
         height, width = image.shape[:2]
 
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-        # goal rgb(10,214,7)
+        
         lower_green = np.array([35, 40, 40])
         upper_green = np.array([85, 255, 255])
         green_mask = cv2.inRange(hsv, lower_green, upper_green)
@@ -149,6 +152,28 @@ class CornRowNavigator(Node):
         self.draw_debug_info(image, left_row_center, right_row_center, center_between_rows)
         return center_offset
 
+    def is_goal_reached(self, image):
+        """Vérifie si le robot a atteint l'objectif"""
+        height, width = image.shape[:2]
+
+        hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        # goal color rgb(10,214,7)
+        lower_goal = np.array([10,214,7])
+        upper_goal = np.array([10,214,7])
+        # if the color is in the center of the image
+        goal_mask = cv2.inRange(hsv, lower_goal, upper_goal)
+        goal_roi = goal_mask[height//2-50:height//2+50, width//2-50:width//2+50]
+        goal_ratio = np.sum(goal_roi > 0) / goal_roi.size
+        if goal_ratio > 0.1:
+            self.get_logger().info("Objectif atteint !")
+            self.stop_robot()
+            return True
+        self.get_logger().info("Objectif non atteint.")
+        self.get_logger().info(f"Objectif position: {self.goal_position}")
+        return False
+
+        return False
+    
     def get_contour_center(self, contour):
         M = cv2.moments(contour)
         if M["m00"] != 0:
@@ -180,8 +205,11 @@ class CornRowNavigator(Node):
         if np.isfinite(left_avg) and np.isfinite(right_avg):
             distance_diff = left_avg - right_avg
             if abs(distance_diff) > 0.2:
-                self.get_logger().info(f"LIDAR correction: L={left_avg:.2f}m, R={right_avg:.2f}m")
-
+                cmd = Twist()
+                cmd.angular.z = -distance_diff * ( self.angular_gain + self.angular_gain * 0.5)
+                cmd.angular.z = max(-1.0, min(1.0, cmd.angular.z))
+                self.cmd_pub.publish(cmd)
+           
     def navigate_to_center(self, center_offset):
         cmd = Twist()
         cmd.linear.x = self.linear_speed
@@ -193,36 +221,61 @@ class CornRowNavigator(Node):
 
     # make orientation w < -0.9
     def turn_right(self):
-        cmd = Twist()
-        cmd.linear.x = 0.24
-        cmd.angular.z = -2.0
-        
-        self.cmd_pub.publish(cmd)
+        if self.target_x == None:
+            self.target_x = self.robot_position_x + 0.1
+        else:
+            if self.robot_position_x - self.target_x > 0.0:
+                self.target_x_reached = True
+                self.target_x = None
 
-        self.get_logger().info(f"{self.robot_current_orientation.z}, {self.robot_current_orientation.w}")
-        if self.robot_current_orientation is not None:
-            self.get_logger().info("Tourne à droite")
-            if self.robot_current_orientation.w < -0.99:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1  
+        if self.target_x_reached:
+            cmd = Twist()
+            cmd.linear.x = 0.20
+            cmd.angular.z = -2.0
+            self.cmd_pub.publish(cmd)
+            if self.robot_current_orientation is not None:
+                self.get_logger().info("Tourne à droite")
+                if self.robot_current_orientation.w < -0.99:
+                    self.get_logger().info("Rotation terminée")
+                    self.no_detection_counter = 0
+                    self.turn_counter += 1
+                    self.status = "navigate"
+                    self.rotation *= -1  
+                    self.target_x = None
+        else:
+            cmd = Twist()
+            cmd.linear.x = 0.5
+            self.cmd_pub.publish(cmd)
+            self.get_logger().info("En attente de rotation à droite")
         
 
     def turn_left(self):
-        cmd = Twist()
-        cmd.linear.x = 0.30
-        cmd.angular.z = 2.0
-        self.cmd_pub.publish(cmd)
-        if self.robot_current_orientation is not None:
-            self.get_logger().info("Tourne à gauche")
-            if self.robot_current_orientation.w > 0.90:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1  
+        if self.target_x == None:
+            self.target_x = self.robot_position_x - 0.1
+        else:
+            if self.robot_position_x - self.target_x < 0.0:
+                self.target_x_reached = True
+                self.target_x = None
+
+        if self.target_x_reached:
+            cmd = Twist()
+            cmd.linear.x = 0.25
+            cmd.angular.z = 2.0
+            self.cmd_pub.publish(cmd)
+            if self.robot_current_orientation is not None:
+                self.get_logger().info("Tourne à gauche")
+                if self.robot_current_orientation.w > 0.99:
+                    self.get_logger().info("Rotation terminée")
+                    self.no_detection_counter = 0
+                    self.turn_counter += 1
+                    self.status = "navigate"
+                    self.rotation *= -1  
+                    self.target_x = None
+        else:
+            cmd = Twist()
+            cmd.linear.x = 0.5
+            self.cmd_pub.publish(cmd)
+            self.get_logger().info("En attente de rotation à gauche")
 
     def stop_robot(self):
         cmd = Twist()
