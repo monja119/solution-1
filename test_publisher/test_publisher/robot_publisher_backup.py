@@ -33,7 +33,7 @@ class CornRowNavigator(Node):
         self.bridge = CvBridge()
         self.get_logger().info("Corn Row Navigator Started")
 
-        self.linear_speed = 10.0
+        self.linear_speed = 5.0
         self.angular_gain = 1.0
         self.target_distance = 1.5
 
@@ -53,9 +53,6 @@ class CornRowNavigator(Node):
         self.robot_current_orientation = None
         self.robot_start_orientation = None
         self.target_yaw = None
-        self.rotation_timer = self.create_timer(0.05, self.rotation_callback)
-        self.rotation_timer.cancel()
-
         
     def position_callback(self, msg):
         """Callback pour traiter la position du robot"""
@@ -83,6 +80,7 @@ class CornRowNavigator(Node):
             else:
                 self.no_detection_counter += 1
                 if self.no_detection_counter > 10:
+                    self.start_turn() if self.status == "navigate" else None
                     self.status = "rotating"
                     self.search_for_rows()
                 else:
@@ -95,16 +93,15 @@ class CornRowNavigator(Node):
         """Définir l'angle cible pour un demi-tour de 180°"""
         if self.robot_current_orientation is not None:
             self.start_yaw = self.quaternion_to_yaw(self.robot_current_orientation)
-            self.target_yaw = self.normalize_angle(self.start_yaw + (2 * math.pi))
+            self.target_yaw = self.normalize_angle(self.start_yaw + math.pi)
             self.get_logger().info(f"Début rotation : yaw initial={self.start_yaw}, yaw cible={self.target_yaw}")
             
     def detect_corn_rows(self, image):
         height, width = image.shape[:2]
 
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-        # goal rgb(10,214,7)
-        lower_green = np.array([35, 40, 40])
-        upper_green = np.array([85, 255, 255])
+        lower_green = np.array([62,87,7])
+        upper_green = np.array([80,106,32])
         green_mask = cv2.inRange(hsv, lower_green, upper_green)
 
         roi_height = int(height * 0.6)
@@ -129,7 +126,7 @@ class CornRowNavigator(Node):
             left_row_center, right_row_center = right_row_center, left_row_center
 
         # ✅ Vérifier que les deux sont bien écartées
-        if abs(left_row_center[0] - right_row_center[0]) < 200:
+        if abs(left_row_center[0] - right_row_center[0]) < 150:
             return None
 
         # ✅ Vérifier qu’il n’y a pas trop de vert au centre
@@ -191,19 +188,21 @@ class CornRowNavigator(Node):
         self.cmd_pub.publish(cmd)
         # self.get_logger().info(f"Navigation: offset={center_offset:.1f}px, angular_z={cmd.angular.z:.2f}")
 
-    # make orientation w < -0.9
     def turn_right(self):
         cmd = Twist()
-        cmd.linear.x = 0.24
-        cmd.angular.z = -2.0
-        
+        cmd.linear.x = 1.5
+        cmd.angular.z = -15.0
         self.cmd_pub.publish(cmd)
 
-        self.get_logger().info(f"{self.robot_current_orientation.z}, {self.robot_current_orientation.w}")
-        if self.robot_current_orientation is not None:
+
+        if self.robot_current_orientation is not None and self.target_yaw is not None:
             self.get_logger().info("Tourne à droite")
-            if self.robot_current_orientation.w < -0.99:
-                self.get_logger().info("Rotation terminée")
+            yaw_diff = self.normalize_angle(
+                self.quaternion_to_yaw(self.robot_current_orientation) 
+                - 
+                self.target_yaw
+                )
+            if abs(yaw_diff) < 0.1:
                 self.no_detection_counter = 0
                 self.turn_counter += 1
                 self.status = "navigate"
@@ -212,17 +211,21 @@ class CornRowNavigator(Node):
 
     def turn_left(self):
         cmd = Twist()
-        cmd.linear.x = 0.30
-        cmd.angular.z = 2.0
+        cmd.linear.x = 1.5
+        cmd.angular.z = 15.0
         self.cmd_pub.publish(cmd)
-        if self.robot_current_orientation is not None:
-            self.get_logger().info("Tourne à gauche")
-            if self.robot_current_orientation.w > 0.90:
-                self.get_logger().info("Rotation terminée")
+        self.get_logger().info("Tourne à gauche")
+        if self.robot_current_orientation is not None and self.target_yaw is not None:
+            yaw_diff = self.normalize_angle(
+                self.quaternion_to_yaw(self.robot_current_orientation) 
+                - 
+                self.target_yaw
+                )   
+            if abs(yaw_diff) < 0.1:
                 self.no_detection_counter = 0
                 self.turn_counter += 1
                 self.status = "navigate"
-                self.rotation *= -1  
+                self.rotation *= -1
 
     def stop_robot(self):
         cmd = Twist()
@@ -233,27 +236,18 @@ class CornRowNavigator(Node):
 
     def search_for_rows(self):
         """Tourne lentement pour rechercher les rangées perdues"""
-        self.rotation_timer.reset()
-
-    
-    def rotation_callback(self):
-        """Callback pour gérer la rotation du robot"""
-
-        if self.status != "rotating":
-            self.rotation_timer.cancel()
-
         if self.rotation == -1:
             self.turn_right()
         else:
             self.turn_left()      
     
-    def quaternion_to_yaw(self, q):
+    def quaternion_to_yaw(q):
         siny_cosp = 2 * (q.w * q.z + q.x * q.y)
         cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z)
         return math.atan2(siny_cosp, cosy_cosp)
 
 
-    def normalize_angle(self, angle):
+    def normalize_angle(angle):
         while angle > math.pi:
             angle -= 2 * math.pi
         while angle < -math.pi:
