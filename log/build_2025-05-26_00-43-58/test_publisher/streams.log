@@ -1,0 +1,24 @@
+[6.241s] Invoking command in '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/test_publisher': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/test_publisher build --build-base /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build install --record /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log --single-version-externally-managed install_data
+[8.038s] running egg_info
+[8.141s] writing ../build/test_publisher/test_publisher.egg-info/PKG-INFO
+[8.145s] writing dependency_links to ../build/test_publisher/test_publisher.egg-info/dependency_links.txt
+[8.147s] writing entry points to ../build/test_publisher/test_publisher.egg-info/entry_points.txt
+[8.150s] writing requirements to ../build/test_publisher/test_publisher.egg-info/requires.txt
+[8.151s] writing top-level names to ../build/test_publisher/test_publisher.egg-info/top_level.txt
+[8.350s] reading manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'
+[8.360s] writing manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'
+[8.361s] running build
+[8.362s] running build_py
+[8.364s] copying test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher
+[8.365s] running install
+[8.385s] running install_lib
+[8.515s] copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher
+[8.547s] byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/robot_publisher.py to robot_publisher.cpython-312.pyc
+[8.548s] running install_data
+[8.549s] running install_egg_info
+[8.804s] removing '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher-0.0.0-py3.12.egg-info' (and everything under it)
+[8.807s] Copying ../build/test_publisher/test_publisher.egg-info to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher-0.0.0-py3.12.egg-info
+[8.823s] running install_scripts
+[10.112s] Installing move_robot script to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/test_publisher
+[10.118s] writing list of installed files to '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log'
+[10.336s] Invoked command in '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/test_publisher' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/test_publisher build --build-base /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build install --record /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log --single-version-externally-managed install_data

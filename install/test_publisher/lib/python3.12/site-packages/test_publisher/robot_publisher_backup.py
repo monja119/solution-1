@@ -4,7 +4,7 @@ from tf2_ros import Buffer, TransformListener
 from tf2_ros.transform_broadcaster import TransformBroadcaster
 import tf_transformations
 from geometry_msgs.msg import Twist, TransformStamped
-from sensor_msgs.msg import Image, LaserScan, NavSatFix, Imu
+from sensor_msgs.msg import Image, LaserScan, NavSatFix
 from nav_msgs.msg import Odometry
 import cv2
 from cv_bridge import CvBridge
@@ -27,10 +27,6 @@ class CornRowNavigator(Node):
             LaserScan, "/scan", self.lidar_callback, 1
         )
 
-        self.imu_sub = self.create_subscription(
-            Imu, "/imu", self.imu_callback, 1
-        )
-
         self.tf_buffer = Buffer()
         self.tf_listener = TransformListener(self.tf_buffer, self)
 
@@ -49,18 +45,20 @@ class CornRowNavigator(Node):
         self.position_sub = self.create_subscription(
             Odometry, "/odom", self.position_callback, 10
         )
+        
 
-        self.goal_position = (1.05, 3.81, 0.35)  # Position cible du robot (x, y, z)
+        self.goal_position = 1.05, 3.81, 0.35 # Position cible du robot (x, y, z)
         self.robot_position_x = 0.0
         self.robot_position_y = 0.0
         self.robot_current_orientation = None
-        self.imu_orientation = None
-        self.start_yaw = None
+        self.robot_start_orientation = None
         self.target_yaw = None
-        self.lidar_ranges = None
+        self.target_x = None
+        self.target_x_reached = False
         self.rotation_timer = self.create_timer(0.05, self.rotation_callback)
         self.rotation_timer.cancel()
 
+        
     def position_callback(self, msg):
         """Callback pour traiter la position du robot"""
         position = msg.pose.pose.position
@@ -68,16 +66,13 @@ class CornRowNavigator(Node):
         self.robot_position_x = position.x
         self.robot_position_y = position.y
         self.robot_current_orientation = orientation
-        if self.status == "navigate" and self.start_yaw is None:
-            self.start_yaw = self.quaternion_to_yaw(orientation)
+        if self.status == "navigate":
+            self.robot_start_orientation = orientation
 
-    def imu_callback(self, msg):
-        """Callback pour traiter les données de l'IMU"""
-        self.imu_orientation = msg.orientation
+        self.get_logger().info(f"positions : x={position.x},y={position.y}, z={position.z}")
+        # self.get_logger().info(f"current_orr: x={orientation.x}, y={orientation.y}, z={orientation.z}, w={orientation.w}")
+        # self.get_logger().info(f"start_orr: x={self.robot_start_orientation.x}, y={self.robot_start_orientation.y}, z={self.robot_start_orientation.z}, w={self.robot_start_orientation.w}")
 
-    def lidar_callback(self, msg):
-        """Callback pour traiter les données LIDAR"""
-        self.lidar_ranges = np.array(msg.ranges)
 
     def image_callback(self, msg):
         try:
@@ -91,13 +86,13 @@ class CornRowNavigator(Node):
                 self.no_detection_counter += 1
                 if self.no_detection_counter > 10:
                     if self.status == "navigate":
-                        is_reached = self.is_goal_reached(cv_image)
+                        is_reached = self.is_goal_reached(cv_image) 
                         if is_reached:
                             self.get_logger().info("Objectif atteint, arrêt du robot.")
                             self.stop_robot()
-                            return
+                            return True
+                        
                     self.status = "rotating"
-                    self.start_turn()
                     self.search_for_rows()
                 else:
                     self.stop_robot()
@@ -105,10 +100,12 @@ class CornRowNavigator(Node):
         except Exception as e:
             self.get_logger().error(f"Erreur traitement image: {e}")
 
+          
     def detect_corn_rows(self, image):
         height, width = image.shape[:2]
 
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
+        
         lower_green = np.array([35, 40, 40])
         upper_green = np.array([85, 255, 255])
         green_mask = cv2.inRange(hsv, lower_green, upper_green)
@@ -119,6 +116,7 @@ class CornRowNavigator(Node):
 
         contours_green, _ = cv2.findContours(green_roi, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
+        # 🧠 Filtrer les petits contours (herbe)
         min_area = 1000
         valid_contours = [cnt for cnt in contours_green if cv2.contourArea(cnt) > min_area]
 
@@ -133,9 +131,11 @@ class CornRowNavigator(Node):
         if left_row_center[0] > right_row_center[0]:
             left_row_center, right_row_center = right_row_center, left_row_center
 
+        # ✅ Vérifier que les deux sont bien écartées
         if abs(left_row_center[0] - right_row_center[0]) < 200:
             return None
 
+        # ✅ Vérifier qu’il n’y a pas trop de vert au centre
         mid_x = int((left_row_center[0] + right_row_center[0]) / 2)
         band_width = 60
         x1 = max(0, mid_x - band_width // 2)
@@ -157,11 +157,10 @@ class CornRowNavigator(Node):
         height, width = image.shape[:2]
 
         hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-        goal_rgb = np.uint8([[[10, 214, 7]]])
-        goal_hsv = cv2.cvtColor(goal_rgb, cv2.COLOR_RGB2HSV)[0][0]
-        hue, sat, val = goal_hsv
-        lower_goal = np.array([max(0, hue - 10), max(0, sat - 40), max(0, val - 40)])
-        upper_goal = np.array([min(179, hue + 10), min(255, sat + 40), min(255, val + 40)])
+        # goal color rgb(10,214,7)
+        lower_goal = np.array([10,214,7])
+        upper_goal = np.array([10,214,7])
+        # if the color is in the center of the image
         goal_mask = cv2.inRange(hsv, lower_goal, upper_goal)
         goal_roi = goal_mask[height//2-50:height//2+50, width//2-50:width//2+50]
         goal_ratio = np.sum(goal_roi > 0) / goal_roi.size
@@ -169,8 +168,12 @@ class CornRowNavigator(Node):
             self.get_logger().info("Objectif atteint !")
             self.stop_robot()
             return True
+        self.get_logger().info("Objectif non atteint.")
+        self.get_logger().info(f"Objectif position: {self.goal_position}")
         return False
 
+        return False
+    
     def get_contour_center(self, contour):
         M = cv2.moments(contour)
         if M["m00"] != 0:
@@ -188,76 +191,91 @@ class CornRowNavigator(Node):
         cv2.imshow("Corn Row Detection", image)
         cv2.waitKey(1)
 
+    def lidar_callback(self, msg):
+        ranges = np.array(msg.ranges)
+        valid_ranges = ranges[np.isfinite(ranges)]
+        if len(valid_ranges) == 0:
+            return
+
+        left_distances = ranges[0:45]
+        right_distances = ranges[-45:]
+        left_avg = np.mean(left_distances[np.isfinite(left_distances)])
+        right_avg = np.mean(right_distances[np.isfinite(right_distances)])
+
+        if np.isfinite(left_avg) and np.isfinite(right_avg):
+            distance_diff = left_avg - right_avg
+            if abs(distance_diff) > 0.2:
+                cmd = Twist()
+                cmd.angular.z = -distance_diff * self.angular_gain 
+                cmd.angular.z = max(-1.0, min(1.0, cmd.angular.z))
+                self.cmd_pub.publish(cmd)
+           
     def navigate_to_center(self, center_offset):
-        """Navigation ajustée avec LIDAR pour éviter d'aller tout droit"""
         cmd = Twist()
         cmd.linear.x = self.linear_speed
         normalized_offset = center_offset / 320.0
         cmd.angular.z = -normalized_offset * self.angular_gain
-
-        # Ajustement avec LIDAR
-        if self.lidar_ranges is not None:
-            left_distances = self.lidar_ranges[0:45]
-            right_distances = self.lidar_ranges[-45:]
-            left_avg = np.mean(left_distances[np.isfinite(left_distances)])
-            right_avg = np.mean(right_distances[np.isfinite(right_distances)])
-            if np.isfinite(left_avg) and np.isfinite(right_avg):
-                distance_diff = left_avg - right_avg
-                if abs(distance_diff) > 0.2:
-                    cmd.angular.z += -distance_diff * 0.5  # Ajustement supplémentaire
-                    cmd.linear.x = max(0.2, self.linear_speed - abs(distance_diff) * 0.1)
-
         cmd.angular.z = max(-1.0, min(1.0, cmd.angular.z))
         self.cmd_pub.publish(cmd)
+        # self.get_logger().info(f"Navigation: offset={center_offset:.1f}px, angular_z={cmd.angular.z:.2f}")
 
-    def start_turn(self):
-        """Définir l'angle cible pour un demi-tour de 180°"""
-        if self.imu_orientation is not None:
-            self.start_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            self.target_yaw = self.normalize_angle(self.start_yaw + math.pi * self.rotation)
-            self.get_logger().info(f"Début rotation : yaw initial={self.start_yaw}, yaw cible={self.target_yaw}")
-
+    # make orientation w < -0.9
     def turn_right(self):
-        """Rotation dynamique à droite avec IMU"""
-        cmd = Twist()
-        if self.imu_orientation is not None and self.target_yaw is not None:
-            current_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
-            kp = 1.0  # Gain proportionnel
-            angular_speed = -kp * yaw_diff
-            angular_speed = max(-0.5, min(0.5, angular_speed))
-            cmd.angular.z = angular_speed
-            # Ajustement vitesse linéaire pendant la rotation
-            cmd.linear.x = max(0.1, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
+        if self.target_x == None:
+            self.target_x = self.robot_position_x + 0.15
+        else:
+            if self.robot_position_x - self.target_x > 0.0:
+                self.target_x_reached = True
+                self.target_x = None
+
+        if self.target_x_reached:
+            cmd = Twist()
+            cmd.linear.x = 0.20
+            cmd.angular.z = -2.0
             self.cmd_pub.publish(cmd)
-            if abs(yaw_diff) < 0.05:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1
-                self.target_yaw = None
+            if self.robot_current_orientation is not None:
+                self.get_logger().info("Tourne à droite")
+                if self.robot_current_orientation.w < -0.99:
+                    self.get_logger().info("Rotation terminée")
+                    self.no_detection_counter = 0
+                    self.turn_counter += 1
+                    self.status = "navigate"
+                    self.rotation *= -1  
+                    self.target_x = None
+        else:
+            cmd = Twist()
+            cmd.linear.x = 0.5
+            self.cmd_pub.publish(cmd)
+            self.get_logger().info("En attente de rotation à droite")
+        
 
     def turn_left(self):
-        """Rotation dynamique à gauche avec IMU"""
-        cmd = Twist()
-        if self.imu_orientation is not None and self.target_yaw is not None:
-            current_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
-            kp = 1.0  # Gain proportionnel
-            angular_speed = kp * yaw_diff
-            angular_speed = max(-0.5, min(0.5, angular_speed))
-            cmd.angular.z = angular_speed
-            # Ajustement vitesse linéaire pendant la rotation
-            cmd.linear.x = max(0.1, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
+        if self.target_x == None:
+            self.target_x = self.robot_position_x - 0.1
+        else:
+            if self.robot_position_x - self.target_x < 0.0:
+                self.target_x_reached = True
+                self.target_x = None
+
+        if self.target_x_reached:
+            cmd = Twist()
+            cmd.linear.x = 0.25
+            cmd.angular.z = 2.0
             self.cmd_pub.publish(cmd)
-            if abs(yaw_diff) < 0.05:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1
-                self.target_yaw = None
+            if self.robot_current_orientation is not None:
+                self.get_logger().info("Tourne à gauche")
+                if self.robot_current_orientation.w > 0.99:
+                    self.get_logger().info("Rotation terminée")
+                    self.no_detection_counter = 0
+                    self.turn_counter += 1
+                    self.status = "navigate"
+                    self.rotation *= -1  
+                    self.target_x = None
+        else:
+            cmd = Twist()
+            cmd.linear.x = 0.5
+            self.cmd_pub.publish(cmd)
+            self.get_logger().info("En attente de rotation à gauche")
 
     def stop_robot(self):
         cmd = Twist()
@@ -267,23 +285,26 @@ class CornRowNavigator(Node):
         self.get_logger().warn("Rangées non détectées - Robot arrêté")
 
     def search_for_rows(self):
-        """Tourne pour rechercher les rangées perdues"""
+        """Tourne lentement pour rechercher les rangées perdues"""
         self.rotation_timer.reset()
 
+    
     def rotation_callback(self):
         """Callback pour gérer la rotation du robot"""
+
         if self.status != "rotating":
             self.rotation_timer.cancel()
-            return
+
         if self.rotation == -1:
             self.turn_right()
         else:
-            self.turn_left()
-
+            self.turn_left()      
+    
     def quaternion_to_yaw(self, q):
         siny_cosp = 2 * (q.w * q.z + q.x * q.y)
         cosy_cosp = 1 - 2 * (q.y * q.y + q.z * q.z)
         return math.atan2(siny_cosp, cosy_cosp)
+
 
     def normalize_angle(self, angle):
         while angle > math.pi:
@@ -291,6 +312,7 @@ class CornRowNavigator(Node):
         while angle < -math.pi:
             angle += 2 * math.pi
         return angle
+
 
 def main(args=None):
     rclpy.init(args=args)
@@ -307,3 +329,5 @@ def main(args=None):
 
 if __name__ == "__main__":
     main()
+
+

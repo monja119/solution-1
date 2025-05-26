@@ -1,0 +1,24 @@
+[3.645s] Invoking command in '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/test_publisher': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/test_publisher build --build-base /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build install --record /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log --single-version-externally-managed install_data
+[4.914s] running egg_info
+[5.004s] writing ../build/test_publisher/test_publisher.egg-info/PKG-INFO
+[5.014s] writing dependency_links to ../build/test_publisher/test_publisher.egg-info/dependency_links.txt
+[5.015s] writing entry points to ../build/test_publisher/test_publisher.egg-info/entry_points.txt
+[5.015s] writing requirements to ../build/test_publisher/test_publisher.egg-info/requires.txt
+[5.016s] writing top-level names to ../build/test_publisher/test_publisher.egg-info/top_level.txt
+[5.251s] reading manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'
+[5.255s] writing manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'
+[5.256s] running build
+[5.261s] running build_py
+[5.261s] copying test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher
+[5.261s] running install
+[5.286s] running install_lib
+[5.387s] copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher
+[5.390s] byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/robot_publisher.py to robot_publisher.cpython-312.pyc
+[5.407s] running install_data
+[5.412s] running install_egg_info
+[5.544s] removing '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher-0.0.0-py3.12.egg-info' (and everything under it)
+[5.549s] Copying ../build/test_publisher/test_publisher.egg-info to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher-0.0.0-py3.12.egg-info
+[5.549s] running install_scripts
+[6.281s] Installing move_robot script to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/test_publisher
+[6.284s] writing list of installed files to '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log'
+[6.430s] Invoked command in '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/test_publisher' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/test_publisher build --build-base /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build install --record /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log --single-version-externally-managed install_data

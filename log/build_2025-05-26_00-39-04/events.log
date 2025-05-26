@@ -1,0 +1,147 @@
+[0.000000] (-) TimerEvent: {}
+[0.005021] (-) JobUnselected: {'identifier': 'parc_robot'}
+[0.005301] (-) JobUnselected: {'identifier': 'parc_robot_bringup'}
+[0.005422] (-) JobUnselected: {'identifier': 'parc_robot_description'}
+[0.005521] (test_publisher) JobQueued: {'identifier': 'test_publisher', 'dependencies': OrderedDict()}
+[0.008605] (test_publisher) JobStarted: {'identifier': 'test_publisher'}
+[0.099286] (-) TimerEvent: {}
+[0.203608] (-) TimerEvent: {}
+[0.304574] (-) TimerEvent: {}
+[0.406382] (-) TimerEvent: {}
+[0.507466] (-) TimerEvent: {}
+[0.613845] (-) TimerEvent: {}
+[0.715244] (-) TimerEvent: {}
+[0.817076] (-) TimerEvent: {}
+[0.917840] (-) TimerEvent: {}
+[1.019071] (-) TimerEvent: {}
+[1.122588] (-) TimerEvent: {}
+[1.225527] (-) TimerEvent: {}
+[1.326325] (-) TimerEvent: {}
+[1.430501] (-) TimerEvent: {}
+[1.531757] (-) TimerEvent: {}
+[1.637130] (-) TimerEvent: {}
+[1.738091] (-) TimerEvent: {}
+[1.851491] (-) TimerEvent: {}
+[1.952963] (-) TimerEvent: {}
+[2.057731] (-) TimerEvent: {}
+[2.163421] (-) TimerEvent: {}
+[2.264018] (-) TimerEvent: {}
+[2.368841] (-) TimerEvent: {}
+[2.471623] (-) TimerEvent: {}
+[2.573299] (-) TimerEvent: {}
+[2.676598] (-) TimerEvent: {}
+[2.778597] (-) TimerEvent: {}
+[2.882379] (-) TimerEvent: {}
+[2.986362] (-) TimerEvent: {}
+[3.087343] (-) TimerEvent: {}
+[3.188624] (-) TimerEvent: {}
+[3.291099] (-) TimerEvent: {}
+[3.391652] (-) TimerEvent: {}
+[3.496364] (-) TimerEvent: {}
+[3.597367] (-) TimerEvent: {}
+[3.699235] (-) TimerEvent: {}
+[3.799661] (-) TimerEvent: {}
+[3.900705] (-) TimerEvent: {}
+[4.002390] (-) TimerEvent: {}
+[4.104241] (-) TimerEvent: {}
+[4.219907] (-) TimerEvent: {}
+[4.320615] (-) TimerEvent: {}
+[4.421795] (-) TimerEvent: {}
+[4.527990] (-) TimerEvent: {}
+[4.628835] (-) TimerEvent: {}
+[4.729757] (-) TimerEvent: {}
+[4.833682] (-) TimerEvent: {}
+[4.934616] (-) TimerEvent: {}
+[5.045524] (-) TimerEvent: {}
+[5.146374] (-) TimerEvent: {}
+[5.249274] (-) TimerEvent: {}
+[5.397313] (-) TimerEvent: {}
+[5.503574] (-) TimerEvent: {}
+[5.607266] (-) TimerEvent: {}
+[5.708105] (-) TimerEvent: {}
+[5.709750] (test_publisher) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/test_publisher', 'build', '--build-base', '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build', 'install', '--record', '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/test_publisher', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'monja', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SESSION_TYPE': 'wayland', 'BUN_INSTALL': '/home/monja/.bun', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/monja', 'OLDPWD': '/home/monja/projects/python/robotics/challengeParc/ros2_ws', 'DESKTOP_SESSION': 'ubuntu', 'NVM_BIN': '/home/monja/.nvm/versions/node/v22.15.0/bin', 'NVM_INC': '/home/monja/.nvm/versions/node/v22.15.0/include/node', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'DBUS_STARTER_BUS_TYPE': 'session', 'SYSTEMD_EXEC_PID': '2436', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus,guid=74ee9a317de5f3d156b9ba0a68335a52', 'COLORTERM': 'truecolor', 'NVM_DIR': '/home/monja/.nvm', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'monja', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'MEMORY_PRESSURE_WATCH': '/sys/fs/cgroup/user.slice/user-1000.slice/user@1000.service/app.slice/app-gnome\\x2dsession\\x2dmanager.slice/gnome-session-manager@ubuntu.service/memory.pressure', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'monja', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/home/monja/.bun/bin:/home/monja/.nvm/versions/node/v22.15.0/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/monja-pc:@/tmp/.ICE-unix/2436,unix/monja-pc:/tmp/.ICE-unix/2436', 'XDG_MENU_PREFIX': 'gnome-', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/30e33bf2_7bff_4f44_8628_d6665467e047', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'fr_FR.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.XLV262', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=00:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.avif=01;35:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:*~=00;90:*#=00;90:*.bak=00;90:*.crdownload=00;90:*.dpkg-dist=00;90:*.dpkg-new=00;90:*.dpkg-old=00;90:*.dpkg-tmp=00;90:*.old=00;90:*.orig=00;90:*.part=00;90:*.rej=00;90:*.rpmnew=00;90:*.rpmorig=00;90:*.rpmsave=00;90:*.swp=00;90:*.tmp=00;90:*.ucf-dist=00;90:*.ucf-new=00;90:*.ucf-old=00;90:', 'GNOME_TERMINAL_SERVICE': ':1.135', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'ROS_DOMAIN_ID': '4', 'AMENT_PREFIX_PATH': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/test_publisher:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot_bringup:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot_description:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'IGN_GAZEBO_RESOURCE_PATH': '/opt/ros/jazzy/share', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'NVM_CD_FLAGS': '', 'DBUS_STARTER_ADDRESS': 'unix:path=/run/user/1000/bus,guid=74ee9a317de5f3d156b9ba0a68335a52', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/share/gnome:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/test_publisher/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'COLCON': '1', 'MEMORY_PRESSURE_WRITE': 'c29tZSAyMDAwMDAgMjAwMDAwMAA=', 'VTE_VERSION': '7600', 'CMAKE_PREFIX_PATH': '/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot_bringup:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot_description:/home/monja/projects/python/robotics/challengeParc/ros2_ws/install/parc_robot:/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[5.812258] (-) TimerEvent: {}
+[5.912673] (-) TimerEvent: {}
+[6.013431] (-) TimerEvent: {}
+[6.119367] (-) TimerEvent: {}
+[6.227805] (-) TimerEvent: {}
+[6.332675] (-) TimerEvent: {}
+[6.433499] (-) TimerEvent: {}
+[6.534376] (-) TimerEvent: {}
+[6.636341] (-) TimerEvent: {}
+[6.740322] (-) TimerEvent: {}
+[6.841354] (-) TimerEvent: {}
+[6.942148] (-) TimerEvent: {}
+[7.048390] (-) TimerEvent: {}
+[7.149320] (-) TimerEvent: {}
+[7.250231] (-) TimerEvent: {}
+[7.352747] (-) TimerEvent: {}
+[7.454406] (-) TimerEvent: {}
+[7.558674] (-) TimerEvent: {}
+[7.661787] (-) TimerEvent: {}
+[7.718730] (test_publisher) StdoutLine: {'line': b'running egg_info\n'}
+[7.729137] (test_publisher) StdoutLine: {'line': b'creating ../build/test_publisher/test_publisher.egg-info\n'}
+[7.764549] (-) TimerEvent: {}
+[7.865461] (-) TimerEvent: {}
+[7.968251] (-) TimerEvent: {}
+[7.968884] (test_publisher) StdoutLine: {'line': b'writing ../build/test_publisher/test_publisher.egg-info/PKG-INFO\n'}
+[7.969664] (test_publisher) StdoutLine: {'line': b'writing dependency_links to ../build/test_publisher/test_publisher.egg-info/dependency_links.txt\n'}
+[7.971018] (test_publisher) StdoutLine: {'line': b'writing entry points to ../build/test_publisher/test_publisher.egg-info/entry_points.txt\n'}
+[7.979350] (test_publisher) StdoutLine: {'line': b'writing requirements to ../build/test_publisher/test_publisher.egg-info/requires.txt\n'}
+[7.980155] (test_publisher) StdoutLine: {'line': b'writing top-level names to ../build/test_publisher/test_publisher.egg-info/top_level.txt\n'}
+[7.980635] (test_publisher) StdoutLine: {'line': b"writing manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'\n"}
+[8.069611] (-) TimerEvent: {}
+[8.173581] (-) TimerEvent: {}
+[8.263513] (test_publisher) StdoutLine: {'line': b"reading manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'\n"}
+[8.269478] (test_publisher) StdoutLine: {'line': b"writing manifest file '../build/test_publisher/test_publisher.egg-info/SOURCES.txt'\n"}
+[8.271451] (test_publisher) StdoutLine: {'line': b'running build\n'}
+[8.273261] (test_publisher) StdoutLine: {'line': b'running build_py\n'}
+[8.273649] (-) TimerEvent: {}
+[8.273951] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build\n'}
+[8.274315] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib\n'}
+[8.274610] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher\n'}
+[8.274839] (test_publisher) StdoutLine: {'line': b'copying test_publisher/robot_publisher_backup.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher\n'}
+[8.324153] (test_publisher) StdoutLine: {'line': b'copying test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher\n'}
+[8.325355] (test_publisher) StdoutLine: {'line': b'copying test_publisher/robot_publisher copy.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher\n'}
+[8.338031] (test_publisher) StdoutLine: {'line': b'copying test_publisher/__init__.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher\n'}
+[8.339990] (test_publisher) StdoutLine: {'line': b'running install\n'}
+[8.365510] (test_publisher) StdoutLine: {'line': b'running install_lib\n'}
+[8.374509] (-) TimerEvent: {}
+[8.476522] (-) TimerEvent: {}
+[8.500434] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher\n'}
+[8.504595] (test_publisher) StdoutLine: {'line': b'copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/robot_publisher_backup.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher\n'}
+[8.508804] (test_publisher) StdoutLine: {'line': b'copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/robot_publisher.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher\n'}
+[8.515548] (test_publisher) StdoutLine: {'line': b'copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/robot_publisher copy.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher\n'}
+[8.516347] (test_publisher) StdoutLine: {'line': b'copying /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/build/lib/test_publisher/__init__.py -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher\n'}
+[8.516824] (test_publisher) StdoutLine: {'line': b'byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/robot_publisher_backup.py to robot_publisher_backup.cpython-312.pyc\n'}
+[8.536381] (test_publisher) StdoutLine: {'line': b'byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/robot_publisher.py to robot_publisher.cpython-312.pyc\n'}
+[8.546904] (test_publisher) StdoutLine: {'line': b'byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/robot_publisher copy.py to robot_publisher copy.cpython-312.pyc\n'}
+[8.553811] (test_publisher) StdoutLine: {'line': b'byte-compiling /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher/__init__.py to __init__.cpython-312.pyc\n'}
+[8.554979] (test_publisher) StdoutLine: {'line': b'running install_data\n'}
+[8.555636] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/share/ament_index\n'}
+[8.556204] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/share/ament_index/resource_index\n'}
+[8.556709] (test_publisher) StdoutLine: {'line': b'creating /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/share/ament_index/resource_index/packages\n'}
+[8.557386] (test_publisher) StdoutLine: {'line': b'copying resource/test_publisher -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/share/ament_index/resource_index/packages\n'}
+[8.576790] (-) TimerEvent: {}
+[8.608259] (test_publisher) StdoutLine: {'line': b'copying package.xml -> /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/share/test_publisher\n'}
+[8.611587] (test_publisher) StdoutLine: {'line': b'running install_egg_info\n'}
+[8.677183] (-) TimerEvent: {}
+[8.778371] (-) TimerEvent: {}
+[8.781251] (test_publisher) StdoutLine: {'line': b'Copying ../build/test_publisher/test_publisher.egg-info to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/python3.12/site-packages/test_publisher-0.0.0-py3.12.egg-info\n'}
+[8.801688] (test_publisher) StdoutLine: {'line': b'running install_scripts\n'}
+[8.881131] (-) TimerEvent: {}
+[8.987377] (-) TimerEvent: {}
+[9.089817] (-) TimerEvent: {}
+[9.190661] (-) TimerEvent: {}
+[9.291406] (-) TimerEvent: {}
+[9.392113] (-) TimerEvent: {}
+[9.496305] (-) TimerEvent: {}
+[9.597086] (-) TimerEvent: {}
+[9.625476] (test_publisher) StdoutLine: {'line': b'Installing move_robot script to /home/monja/projects/python/robotics/challengeParc/ros2_ws/src/install/test_publisher/lib/test_publisher\n'}
+[9.626217] (test_publisher) StdoutLine: {'line': b"writing list of installed files to '/home/monja/projects/python/robotics/challengeParc/ros2_ws/src/build/test_publisher/install.log'\n"}
+[9.697335] (-) TimerEvent: {}
+[9.798119] (-) TimerEvent: {}
+[9.832140] (test_publisher) CommandEnded: {'returncode': 0}
+[9.907871] (-) TimerEvent: {}
+[9.935105] (test_publisher) JobEnded: {'identifier': 'test_publisher', 'rc': 0}
+[9.941089] (-) EventReactorShutdown: {}
