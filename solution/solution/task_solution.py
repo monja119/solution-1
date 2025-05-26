@@ -8,7 +8,7 @@ from cv_bridge import CvBridge
 import numpy as np
 import math
 
-class CornRowNavigator(Node):
+class TaskSolution(Node):
     def __init__(self):
         super().__init__("corn_row_navigator")
 
@@ -276,7 +276,7 @@ class CornRowNavigator(Node):
 
 def main(args=None):
     rclpy.init(args=args)
-    navigator = CornRowNavigator()
+    navigator = TaskSolution()
     try:
         rclpy.spin(navigator)
     except KeyboardInterrupt:

@@ -37,8 +37,8 @@ class CornRowNavigator(Node):
         self.bridge = CvBridge()
         self.get_logger().info("Corn Row Navigator Started")
 
-        self.linear_speed = 0.5
-        self.angular_gain = 1.0
+        self.linear_speed = 3.0
+        self.angular_gain = 1.5
         self.target_distance = 1.5
 
         self.no_detection_counter = 0
@@ -97,7 +97,7 @@ class CornRowNavigator(Node):
                             self.stop_robot()
                             return
                     self.status = "rotating"
-                    self.start_turn()
+                    self.start_turn() if self.target_yaw is None else None
                     self.search_for_rows()
                 else:
                     self.stop_robot()
@@ -214,50 +214,55 @@ class CornRowNavigator(Node):
         """Définir l'angle cible pour un demi-tour de 180°"""
         if self.imu_orientation is not None:
             self.start_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            self.target_yaw = self.normalize_angle(self.start_yaw + math.pi * self.rotation)
+            real_orientation = self.rotation  
+            if self.start_yaw < 0.0 and self.rotation == -1:
+                real_orientation = 1
+            elif self.start_yaw > 0.0 and self.rotation == 1:
+                real_orientation = 1
+            self.target_yaw = self.normalize_angle(self.start_yaw + math.pi  * real_orientation)
             self.get_logger().info(f"Début rotation : yaw initial={self.start_yaw}, yaw cible={self.target_yaw}")
 
     def turn_right(self):
         """Rotation dynamique à droite avec IMU"""
         cmd = Twist()
-        if self.imu_orientation is not None and self.target_yaw is not None:
-            current_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
-            kp = 1.0  # Gain proportionnel
-            angular_speed = -kp * yaw_diff
-            angular_speed = max(-0.5, min(0.5, angular_speed))
-            cmd.angular.z = angular_speed
-            # Ajustement vitesse linéaire pendant la rotation
-            cmd.linear.x = max(0.1, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
-            self.cmd_pub.publish(cmd)
-            if abs(yaw_diff) < 0.05:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1
-                self.target_yaw = None
+        current_yaw = self.quaternion_to_yaw(self.imu_orientation)
+        yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
+        kp = 1.5 # Gain proportionnel
+        angular_speed = -kp * yaw_diff
+        angular_speed = max(-0.5, min(0.5, angular_speed))
+        cmd.angular.z = 2.0
+        cmd.linear.x = 0.2  
+        cmd.linear.x = max(0.1, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
+        self.cmd_pub.publish(cmd)
+        if self.robot_current_orientation.w < -0.99:
+            self.get_logger().info("Rotation terminée")
+            self.no_detection_counter = 0
+            self.turn_counter += 1
+            self.status = "navigate"
+            self.rotation *= -1
+            self.target_yaw = None
 
     def turn_left(self):
         """Rotation dynamique à gauche avec IMU"""
         cmd = Twist()
-        if self.imu_orientation is not None and self.target_yaw is not None:
-            current_yaw = self.quaternion_to_yaw(self.imu_orientation)
-            yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
-            kp = 1.0  # Gain proportionnel
-            angular_speed = kp * yaw_diff
-            angular_speed = max(-0.5, min(0.5, angular_speed))
-            cmd.angular.z = angular_speed
-            # Ajustement vitesse linéaire pendant la rotation
-            cmd.linear.x = max(0.1, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
-            self.cmd_pub.publish(cmd)
-            if abs(yaw_diff) < 0.05:
-                self.get_logger().info("Rotation terminée")
-                self.no_detection_counter = 0
-                self.turn_counter += 1
-                self.status = "navigate"
-                self.rotation *= -1
-                self.target_yaw = None
+        current_yaw = self.quaternion_to_yaw(self.imu_orientation)
+        yaw_diff = self.normalize_angle(current_yaw - self.target_yaw)
+        self.get_logger().info(f"Yaw actuel : {current_yaw}, Yaw cible : {self.target_yaw}, Différence : {yaw_diff}")
+        kp = 1.5 # Gain proportionnel
+        angular_speed = -kp * yaw_diff
+        angular_speed = max(-0.5, min(0.5, angular_speed))
+        cmd.angular.z = - 2.0 
+        cmd.linear.x = 0.2  
+        cmd.linear.x = max(0.0, 0.2 - abs(yaw_diff) * 0.1)  # Réduction progressive
+        self.cmd_pub.publish(cmd)
+        if self.robot_current_orientation.w > -0.99:
+            self.get_logger().info("Rotation terminée")
+            self.no_detection_counter = 0
+            self.turn_counter += 1
+            self.status = "navigate"
+            self.rotation *= -1
+            self.target_yaw = None
+
 
     def stop_robot(self):
         cmd = Twist()
